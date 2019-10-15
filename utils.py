@@ -25,17 +25,3 @@ def bagOfWords(sentenceList):
             else:
                 bow[word] = 1
     return bow
-
-def tfIdfVectorizer(bowAll, nSentences, wordList, nUniqueWords, allSentencesList):
-    tfIdfVector = []
-
-    for sentence in allSentencesList:
-        vector = [0] * nUniqueWords
-        sentence = sentence.split()
-
-        for word in sentence:
-            vector[wordList.index(word)] += 1
-        
-        tfIdfVector.append(vector)
-    
-    return tfIdfVector
